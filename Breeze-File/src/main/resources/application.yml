@@ -1,0 +1,13 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: breeze-file
+breeze:
+  file:
+    oss:
+      accessKey: 7674HRKRL6I4GMKQOJSW
+      secretKey: m96rwegZfzIfgbOYst7HGbqxF80knw1Wg5lqI1Ok
+      endpoint: http://124.220.134.171:9000
+      requestTimeout: 5000
+      bucket:
