@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.breeze</groupId>
-    <artifactId>Breeze-File</artifactId>
+    <artifactId>breeze-file-spring-boot-starter</artifactId>
     <version>1.0.0</version>
 
 
