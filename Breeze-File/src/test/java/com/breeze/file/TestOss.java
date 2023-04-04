@@ -2,7 +2,6 @@ package com.breeze.file;
 
 import com.amazonaws.services.s3.model.Bucket;
 import com.amazonaws.services.s3.model.BucketPolicy;
-import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.breeze.file.service.impl.FileClient;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,9 +47,8 @@ public class TestOss {
 //        fileClient.uploadFile("bfile", "bfile02/微信图片_20220518204917.png", new File("C:\\Users\\余生一盏清风\\Pictures\\微信图片_20220518204917.png"));
 //        fileClient.getS3Client().putObject(new PutObjectRequest("bfile", "bfile01/微信图片_20220518204917.png", new File("C:\\Users\\余生一盏清风\\Pictures\\微信图片_20220518204917.png")));
 //        fileClient.uploadFile("bfile", "bfile03/","01.png", new File("C:\\Users\\余生一盏清风\\Pictures\\微信图片_20220518204917.png"));
-//        String fileUrl = fileClient.uploadFile("bfile", "bfile05", "微信图片_20220518204917.png", new File("C:\\Users\\余生一盏清风\\Pictures\\微信图片_20220518204917.png"));
-//        System.out.println(fileUrl);
-        fileClient.getS3Client().putObject(new PutObjectRequest("bfile", "bfile05/微信图片_20220518204917.png", new File("C:\\Users\\余生一盏清风\\Pictures\\微信图片_20220518204917.png")));
+        String fileUrl = fileClient.uploadFile("bfile", "bfile06", "微信图片_202205182049171.png", new File("C:\\Users\\余生一盏清风\\Pictures\\微信图片_20220518204917.png"));
+        System.out.println(fileUrl);
     }
 
     @Test
