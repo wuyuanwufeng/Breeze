@@ -8,7 +8,7 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$/breeze-file" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/breeze-file" />
+            <option value="$PROJECT_DIR$/Breeze-File" />
           </set>
         </option>
         <option name="useQualifiedModuleNames" value="true" />

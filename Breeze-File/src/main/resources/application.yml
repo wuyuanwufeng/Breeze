@@ -11,3 +11,5 @@ breeze:
       endpoint: http://124.220.134.171:9000
       requestTimeout: 5000
       bucket:
+      maxUploadSize: 100
+      region:
