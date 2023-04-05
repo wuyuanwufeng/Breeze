@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.breeze</groupId>
+    <groupId>io.breeze</groupId>
     <artifactId>breeze-file-spring-boot-starter</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -72,17 +72,6 @@
             </plugin>
         </plugins>
     </build>
-    <distributionManagement>
-        <repository>
-            <id>rdc</id>
-            <url>https://packages.aliyun.com/maven/repository/2359097-release-EQyjeR/</url>
-        </repository>
-        <snapshotRepository>
-            <id>rdc</id>
-            <url>https://packages.aliyun.com/maven/repository/2359097-snapshot-lKiltt/</url>
-        </snapshotRepository>
-    </distributionManagement>
-
 
 
 </project>
