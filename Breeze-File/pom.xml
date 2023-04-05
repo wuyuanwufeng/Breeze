@@ -72,6 +72,17 @@
             </plugin>
         </plugins>
     </build>
+    <distributionManagement>
+        <repository>
+            <id>rdc</id>
+            <url>rdc-releases::default::https://packages.aliyun.com/maven/repository/2359097-release-EQyjeR/</url>
+        </repository>
+        <snapshotRepository>
+            <id>rdc</id>
+            <url>rdc-snapshots::default::https://packages.aliyun.com/maven/repository/2359097-snapshot-lKiltt/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
 
 
 </project>
