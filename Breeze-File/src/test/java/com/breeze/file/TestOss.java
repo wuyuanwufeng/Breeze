@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootTest
@@ -94,6 +95,28 @@ public class TestOss {
     }
     private String buildFilePath(String directory, String fileName) {
         return trimStringWith(directory, '/') + File.separator + trimStringWith(fileName, '/');
+    }
+
+
+    @Test
+    public void testSignUrl() {
+        String signUrl = fileClient.getFileSignUrl("bfile", "bfile03/01.png",1L);
+        System.out.println(signUrl);
+    }
+
+    @Test
+    public void testListFiles() {
+        fileClient.listFiles("bfile", "bfile01").stream().forEach(key-> System.out.println(key));
+
+    }
+
+    @Test
+    public void testDeleteFiles() {
+        List<String> kys = new ArrayList<String>();
+        kys.add("bfile01/微信图片_20220518204917.png");
+        kys.add("bfile01/spring-boot-2.1.0.RELEASE.zip");
+        fileClient.deleteFiles("bfile",kys);
+
     }
 
     public String trimStringWith(String str, char beTrim) {

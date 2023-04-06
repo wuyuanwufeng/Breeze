@@ -11,7 +11,10 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Collections;
+import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -104,9 +107,31 @@ public class FileClient implements OssClient {
     }
 
     @Override
+    public void deleteFiles(String bucketName, List<String> filePaths) {
+        DeleteObjectsRequest deleteObjectsRequest = new DeleteObjectsRequest(bucketName).withKeys(filePaths.toArray(new String[filePaths.size()]));
+        amazonS3.deleteObjects(deleteObjectsRequest);
+    }
+
+    @Override
     public List<String> getBucketObjects(String bucketName) {
         ListObjectsV2Result listObjectsV2Result = amazonS3.listObjectsV2(bucketName);
         return listObjectsV2Result.getObjectSummaries().stream().map(S3ObjectSummary::getKey).collect(Collectors.toList());
+    }
+
+    @Override
+    public String getFileSignUrl(String bucketName, String filePath, Long expiration) {
+        if (expiration != null && expiration <= 0){
+            throw new IllegalArgumentException("expiration must be larger than 0 or expiration is null");
+        }
+        return amazonS3.generatePresignedUrl(bucketName, filePath, new Date(System.currentTimeMillis() + 1000 * 60 * expiration)).toString();
+    }
+
+    @Override
+    public List<String> listFiles(String bucketName, String prefix) {
+        return Optional.ofNullable(amazonS3.listObjectsV2(bucketName, prefix).getObjectSummaries())
+                .orElse(Collections.emptyList())
+                .stream().map(S3ObjectSummary::getKey)
+                .collect(Collectors.toList());
     }
 
 

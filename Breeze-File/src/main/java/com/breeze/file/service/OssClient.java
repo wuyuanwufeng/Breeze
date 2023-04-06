@@ -35,5 +35,12 @@ public interface OssClient {
 
     void deleteFile(String bucketName, String directory, String fileName);
 
+    void deleteFiles(String bucketName, List<String> filePaths);
+
     List<String> getBucketObjects(String bucketName);
+
+    String getFileSignUrl(String bucketName, String filePath, Long expiration);
+
+    List<String> listFiles(String bucketName, String prefix);
+
 }
