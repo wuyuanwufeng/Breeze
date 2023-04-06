@@ -32,7 +32,7 @@ public class FileServerConfiguration {
                     @Override
                     public void beforeRequest(Request<?> request) {
                         super.beforeRequest(request);
-                        request.getOriginalRequest().getRequestClientOptions().setReadLimit(fileServerProperties.getMaxUploadSize() * 1000000);
+                        request.getOriginalRequest().getRequestClientOptions().setReadLimit(fileServerProperties.getMaxUploadSize() < 0 ? 1 * 1000000 : fileServerProperties.getMaxUploadSize() * 1000000);
                     }
                 })
                 .build();
