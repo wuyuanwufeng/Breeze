@@ -1,17 +1,46 @@
 # Breeze
 
 #### 介绍
-。。。。。。。。。。。
+文件服务器上传组件
 
 #### 软件架构
-软件架构说明
+springboot，aws-java-sdk
 
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+maven中引入
+
+
+```maven
+<dependency>
+    <groupId>com.gitee.wuyuanwufeng</groupId>
+    <artifactId>breeze-file-spring-boot-starter</artifactId>
+    <version>1.0.2</version>
+</dependency>
+```
+
+
+
+appliaction.yam配置相关字段
+
+
+```yml
+breeze:
+  file:
+    oss:
+      accessKey: 
+      secretKey: 
+      endpoint: http://127.0.0.1:9000
+      requestTimeout: 5000
+      bucket:
+      maxUploadSize: 100
+      region:
+
+```
+
+
+需要上传文件的地方注入fileClient
 
 #### 使用说明
 
