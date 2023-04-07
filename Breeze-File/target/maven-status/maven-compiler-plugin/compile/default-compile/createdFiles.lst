@@ -1,7 +1,0 @@
-com\breeze\file\config\FileServerConfiguration.class
-com\breeze\file\config\properties\FileServerProperties.class
-com\breeze\file\service\OssClient.class
-com\breeze\BreezeFileApplication.class
-com\breeze\file\service\impl\FileClient.class
-com\breeze\file\config\FileServerConfiguration$1.class
-META-INF\spring-configuration-metadata.json
