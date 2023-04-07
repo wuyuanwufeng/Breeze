@@ -1,1 +1,9 @@
-.idea
+.idea/
+*.ipr
+*.iml
+*.iws
+
+target/
+*.versionsBackup
+
+/.iml
